@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TA TE TI</title>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+	<H1>Bienvenidos al Ta Te Ti de Nicolas Lambertucci</H1>
+	<div align>
+	<label for="player1">Jugador 1:</label>
+<textarea id="player1" rows="1" cols="50" placeholder="ingrese su nombre">
+</textarea>
+<label for="player2">Jugador 2:</label>
+<textarea id="player2" rows="1" cols="50" placeholder="ingrese su nombre">
+</textarea>
+</div>
+
+	<div class="game-area">
+			<input type="submit" value="Comenzar" onclick="getValues()" class="submit-button"> 
+		</div>
+		<div id="game-board" class="game-board">
+			Pulsa "Comenzar" para empezar.
+		</div>
+		
+		<div class="score-card">
+			<p>Historial de partidas:</p>
+			Jugador 1: <span id="score-X">0</span> <br>
+			Jugador 2: <span id="score-Y">0</span>
+		</div>
+
+	</div>
+<h2 id="winner"></h2>
+<h3 id="error"></h3>
+</body>
+</html>
