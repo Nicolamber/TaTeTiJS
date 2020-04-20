@@ -15,7 +15,7 @@ var scores = new Array();
 function resetParams() {
 	turn = 'X';
 	game_type = 3;
-	total_turns = 0;robot = true;
+	total_turns = 0;
 	finished = false;
 
 	selections['X'] = new Array();
@@ -170,8 +170,7 @@ function generateGame(player1, player2){
 }
 
 
-// Seteo el valor de X o O
-function markCheck(obj){
+// Seteo el valor de X o Y
 
 	obj.value = turn;
 	total_turns++;
@@ -191,8 +190,7 @@ function markCheck(obj){
 
 
 
-// Return intersaction result by comparing 
-// Players' turns and Winning patterns
+// Calculo el resultado de las intersecciones comparando 
 function intersectionArray(x, y){
 
     var response = [];
@@ -208,7 +206,7 @@ function intersectionArray(x, y){
 
 }
 
-
+//Actualiza el historial de los jugadores luego de que la partida finaliza
 function scoreUpdate(turn){
 	scores[turn]++;
 	document.getElementById('score-'+turn).innerHTML = scores[turn];
