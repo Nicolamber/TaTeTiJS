@@ -20,6 +20,8 @@ function resetParams() {
 
 	selections['X'] = new Array();
 	selections['Y'] = new Array();
+	document.getElementById("winner").innerHTML = ""
+	document.getElementById("error").innerHTML = ""
 }
 
 
@@ -35,7 +37,7 @@ function changeTurn(){
 function winnerPatterns() {
 	var wins = Array();
 
-	// 3 x 3 winning patterns;
+
 	if (game_type==3) wins = [ 
 								[11,12,13], [21,22,23], [31,32,33],
 						 		[11,21,31], [12,22,32], [13,23,33], 
@@ -81,7 +83,6 @@ function checkWinner() {
 		}
 	}
 
-	// If no one wins; declare DRAW
 	if ( ( total_turns == (game_type*game_type) ) && finished === false ) { 
 		document.getElementById("winner").innerHTML = "Los jugadores han empatado"
 		finished = true;
@@ -171,6 +172,7 @@ function generateGame(player1, player2){
 
 
 // Seteo el valor de X o Y
+function markCheck(obj){
 
 	obj.value = turn;
 	total_turns++;
@@ -190,7 +192,7 @@ function generateGame(player1, player2){
 
 
 
-// Calculo el resultado de las intersecciones comparando 
+// Verifico intersecciones comparando jugadores y resultados
 function intersectionArray(x, y){
 
     var response = [];
@@ -206,7 +208,7 @@ function intersectionArray(x, y){
 
 }
 
-//Actualiza el historial de los jugadores luego de que la partida finaliza
+//Actualizo el historial
 function scoreUpdate(turn){
 	scores[turn]++;
 	document.getElementById('score-'+turn).innerHTML = scores[turn];
